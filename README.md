@@ -46,3 +46,10 @@ This requires O(n) extra space.
 2. Lomuto Partition: We have used this partition in this article. This is a simple algorithm,
 we keep track of index of smaller elements and keep swapping. We have used it here in this article
 because of its simplicity.
+3. Hoare'e Partition: This is the fastest of all. Here we traverse an array from both sides
+and keep swapping greater elements on the left smaller elements on the right, while the array
+is not partitioned.
+
+The logic is simple, we start from the leftmost element and keep track of the index of smaller (or equal)
+elements as **i** increments. While traversing, if we find a smaller element,
+we swap the current element with arr[i]. Otherwise, we ignore the current element.
