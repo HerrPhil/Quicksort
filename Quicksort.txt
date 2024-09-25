@@ -1,0 +1,151 @@
+Hello Quicksort Solution
+the number of elements to sort is 7
+quicksort() on low 0 and high 6
+quicksort() when low is less than high then partition and recurse quicksort around partition
+partition() on low 0 and high 6
+partition() initial state of array is [50, 80, 40, 90, 30, 10, 70]
+partition() the pivot index is high
+partition() the pivot value is 70
+partition() initialize smaller element index -1
+partition() the index of high before the pivot (high) 5
+partition() for the current element index 0
+partition() the current element value 50 is less than the pivot value
+partition() increment smaller element index
+partition() Do swap of values of smaller element index 0 and current element index 0
+partition() current state of array is [50, 80, 40, 90, 30, 10, 70]
+partition() for the current element index 1
+partition() the current element value 80 is greater than or equal to the pivot value
+partition() retain smaller element index 0
+partition() Skip swap
+partition() current state of array is [50, 80, 40, 90, 30, 10, 70]
+partition() for the current element index 2
+partition() the current element value 40 is less than the pivot value
+partition() increment smaller element index
+partition() Do swap of values of smaller element index 1 and current element index 2
+partition() current state of array is [50, 40, 80, 90, 30, 10, 70]
+partition() for the current element index 3
+partition() the current element value 90 is greater than or equal to the pivot value
+partition() retain smaller element index 1
+partition() Skip swap
+partition() current state of array is [50, 40, 80, 90, 30, 10, 70]
+partition() for the current element index 4
+partition() the current element value 30 is less than the pivot value
+partition() increment smaller element index
+partition() Do swap of values of smaller element index 2 and current element index 4
+partition() current state of array is [50, 40, 30, 90, 80, 10, 70]
+partition() for the current element index 5
+partition() the current element value 10 is less than the pivot value
+partition() increment smaller element index
+partition() Do swap of values of smaller element index 3 and current element index 5
+partition() current state of array is [50, 40, 30, 10, 80, 90, 70]
+partition() finally swap values at positions 4 and 6 to put pivot value in final position
+partition() final state of array is [50, 40, 30, 10, 70, 90, 80]
+quicksort() partition index = 4
+quicksort() continue sorting before partition
+quicksort() on low 0 and high 3
+quicksort() when low is less than high then partition and recurse quicksort around partition
+partition() on low 0 and high 3
+partition() initial state of array is [50, 40, 30, 10, 70, 90, 80]
+partition() the pivot index is high
+partition() the pivot value is 10
+partition() initialize smaller element index -1
+partition() the index of high before the pivot (high) 2
+partition() for the current element index 0
+partition() the current element value 50 is greater than or equal to the pivot value
+partition() retain smaller element index -1
+partition() Skip swap
+partition() current state of array is [50, 40, 30, 10, 70, 90, 80]
+partition() for the current element index 1
+partition() the current element value 40 is greater than or equal to the pivot value
+partition() retain smaller element index -1
+partition() Skip swap
+partition() current state of array is [50, 40, 30, 10, 70, 90, 80]
+partition() for the current element index 2
+partition() the current element value 30 is greater than or equal to the pivot value
+partition() retain smaller element index -1
+partition() Skip swap
+partition() current state of array is [50, 40, 30, 10, 70, 90, 80]
+partition() finally swap values at positions 0 and 3 to put pivot value in final position
+partition() final state of array is [10, 40, 30, 50, 70, 90, 80]
+quicksort() partition index = 0
+quicksort() continue sorting before partition
+quicksort() on low 0 and high -1
+quicksort() when low is greater than or equal to high then found stop condition
+quicksort() pop from recursion stack
+quicksort() continue sorting after partition
+quicksort() on low 1 and high 3
+quicksort() when low is less than high then partition and recurse quicksort around partition
+partition() on low 1 and high 3
+partition() initial state of array is [10, 40, 30, 50, 70, 90, 80]
+partition() the pivot index is high
+partition() the pivot value is 50
+partition() initialize smaller element index 0
+partition() the index of high before the pivot (high) 2
+partition() for the current element index 1
+partition() the current element value 40 is less than the pivot value
+partition() increment smaller element index
+partition() Do swap of values of smaller element index 1 and current element index 1
+partition() current state of array is [10, 40, 30, 50, 70, 90, 80]
+partition() for the current element index 2
+partition() the current element value 30 is less than the pivot value
+partition() increment smaller element index
+partition() Do swap of values of smaller element index 2 and current element index 2
+partition() current state of array is [10, 40, 30, 50, 70, 90, 80]
+partition() finally swap values at positions 3 and 3 to put pivot value in final position
+partition() final state of array is [10, 40, 30, 50, 70, 90, 80]
+quicksort() partition index = 3
+quicksort() continue sorting before partition
+quicksort() on low 1 and high 2
+quicksort() when low is less than high then partition and recurse quicksort around partition
+partition() on low 1 and high 2
+partition() initial state of array is [10, 40, 30, 50, 70, 90, 80]
+partition() the pivot index is high
+partition() the pivot value is 30
+partition() initialize smaller element index 0
+partition() the index of high before the pivot (high) 1
+partition() for the current element index 1
+partition() the current element value 40 is greater than or equal to the pivot value
+partition() retain smaller element index 0
+partition() Skip swap
+partition() current state of array is [10, 40, 30, 50, 70, 90, 80]
+partition() finally swap values at positions 1 and 2 to put pivot value in final position
+partition() final state of array is [10, 30, 40, 50, 70, 90, 80]
+quicksort() partition index = 1
+quicksort() continue sorting before partition
+quicksort() on low 1 and high 0
+quicksort() when low is greater than or equal to high then found stop condition
+quicksort() pop from recursion stack
+quicksort() continue sorting after partition
+quicksort() on low 2 and high 2
+quicksort() when low is greater than or equal to high then found stop condition
+quicksort() pop from recursion stack
+quicksort() continue sorting after partition
+quicksort() on low 4 and high 3
+quicksort() when low is greater than or equal to high then found stop condition
+quicksort() pop from recursion stack
+quicksort() continue sorting after partition
+quicksort() on low 5 and high 6
+quicksort() when low is less than high then partition and recurse quicksort around partition
+partition() on low 5 and high 6
+partition() initial state of array is [10, 30, 40, 50, 70, 90, 80]
+partition() the pivot index is high
+partition() the pivot value is 80
+partition() initialize smaller element index 4
+partition() the index of high before the pivot (high) 5
+partition() for the current element index 5
+partition() the current element value 90 is greater than or equal to the pivot value
+partition() retain smaller element index 4
+partition() Skip swap
+partition() current state of array is [10, 30, 40, 50, 70, 90, 80]
+partition() finally swap values at positions 5 and 6 to put pivot value in final position
+partition() final state of array is [10, 30, 40, 50, 70, 80, 90]
+quicksort() partition index = 5
+quicksort() continue sorting before partition
+quicksort() on low 5 and high 4
+quicksort() when low is greater than or equal to high then found stop condition
+quicksort() pop from recursion stack
+quicksort() continue sorting after partition
+quicksort() on low 6 and high 6
+quicksort() when low is greater than or equal to high then found stop condition
+quicksort() pop from recursion stack
+ 10 30 40 50 70 80 90
