@@ -13,8 +13,9 @@ public class Quicksort {
         }
 
         // sample test
-        int [] sample = new int [] {10, 80, 30, 90, 40};
-        // int [] sample = new int [] {10, 80, 30, 90, 40, 50, 70};
+        // int [] sample = new int [] {10, 80, 30, 90, 40};
+        int [] sample = new int [] {10, 80, 30, 90, 40, 50, 70};
+        // int [] sample = new int [] {50, 80, 40, 90, 30, 10, 70};
 
         Quicksort quicksort = new Quicksort(sample);
 
@@ -56,14 +57,24 @@ public class Quicksort {
         System.out.printf("quicksort() partition index = %d%n", partitionIndex);
     }
 
+    /**
+      * partition() does not sort data, immediately.
+      * The sample data sets in the article already have values partly sorted.
+      * I created a data set with more unsorted values to make it easier to see partition behaviour.
+      * It might get a few values sorted.
+      * However, its single job (SOLID design) is to partition around pivot.
+      */
     private int partition(int low, int high) {
 
         System.out.printf("partition() on low %d and high %d%n", low, high);
 
+        System.out.printf("partition() initial state of array is %s%n", Arrays.toString(original));
+
         // Choosing the pivot value - pick high
         int pivot = original[high];
 
-        System.out.printf("The pivot value is %d%n", pivot);
+        System.out.printf("partition() the pivot index is high%n");
+        System.out.printf("partition() the pivot value is %d%n", pivot);
         
         // Index of smaller element and indicates the
         // right (future) position of pivot found so far
@@ -91,7 +102,7 @@ public class Quicksort {
             if (original[currentElement] >= pivot) {
                 System.out.printf("partition() the current element value %d is greater than or equal to the pivot value%n", original[currentElement]);
                 System.out.printf("partition() retain smaller element index %d%n", smallerElement);
-                System.out.printf("Skip swap%n");
+                System.out.printf("partition() Skip swap%n");
             }
 
             // When the current element value is less than the pivot value,
@@ -102,17 +113,17 @@ public class Quicksort {
             // Therefore they can be swapped with the smaller value at the current element index.
             if (original[currentElement] < pivot) {
 
-                System.out.printf("partition() the current element value %d is greater than or equal to the pivot value%n", original[currentElement]);
+                System.out.printf("partition() the current element value %d is less than the pivot value%n", original[currentElement]);
 
                 // Increment the index of the smaller element
+                System.out.printf("partition() increment smaller element index%n");
                 smallerElement++;
-                System.out.printf("partition() incremented smaller element index, its value is now %d%n", smallerElement);
 
-                System.out.printf("Do swap%n");
+                System.out.printf("partition() Do swap of values of smaller element index %d and current element index %d%n", smallerElement, currentElement);
                 swap(smallerElement, currentElement);
             }
 
-            System.out.printf("Current state of array is %s%n", Arrays.toString(original));
+            System.out.printf("partition() current state of array is %s%n", Arrays.toString(original));
 
         }
 
@@ -121,10 +132,10 @@ public class Quicksort {
         // is greater than or equal to the pivot.
         // This is the new location of the pivot.
         // This also puts the bigger value from the left-side partition in the right-side partition with other bigger values.
-        System.out.printf("Finally swap values at positions %d and %d to put pivot value in final position%n", smallerElement + 1, high);
+        System.out.printf("partition() finally swap values at positions %d and %d to put pivot value in final position%n", smallerElement + 1, high);
         swap(smallerElement + 1, high);
 
-        System.out.printf("Final state of array is %s%n", Arrays.toString(original));
+        System.out.printf("partition() final state of array is %s%n", Arrays.toString(original));
 
         return (smallerElement + 1);
     }
