@@ -14,8 +14,8 @@ public class Quicksort {
 
         // sample test
         // int [] sample = new int [] {10, 80, 30, 90, 40};
-        int [] sample = new int [] {10, 80, 30, 90, 40, 50, 70};
-        // int [] sample = new int [] {50, 80, 40, 90, 30, 10, 70};
+        // int [] sample = new int [] {10, 80, 30, 90, 40, 50, 70};
+        int [] sample = new int [] {50, 80, 40, 90, 30, 10, 70};
 
         Quicksort quicksort = new Quicksort(sample);
 
@@ -55,14 +55,30 @@ public class Quicksort {
         int partitionIndex = partition(low, high);
 
         System.out.printf("quicksort() partition index = %d%n", partitionIndex);
+
+        System.out.printf("quicksort() continue sorting before partition%n");
+        quicksort(low, partitionIndex - 1);
+
+        System.out.printf("quicksort() continue sorting after partition%n");
+        quicksort(partitionIndex + 1, high);
     }
 
     /**
-      * partition() does not sort data, immediately.
+      * partition() sorts data in the sense that the end result
+      * is that smaller values are to the left of the pivot value
+      * and the larger values are to the right of the pivot value.
+      *
       * The sample data sets in the article already have values partly sorted.
       * I created a data set with more unsorted values to make it easier to see partition behaviour.
       * It might get a few values sorted.
       * However, its single job (SOLID design) is to partition around pivot.
+      *
+      * The article describes it like:
+      * This function takes the last element as the pivot value,
+      * places the pivot element at its correct position
+      * in the sorted array, and places all smaller elements to the left
+      * of the pivot value and all larger elements to the right of the pivot value.
+      *
       */
     private int partition(int low, int high) {
 
