@@ -54,7 +54,7 @@ public class Quicksort {
 
         if (low < high) {
 
-            System.out.printf("when low is less than high then partition and recurse quicksort around partition%n");
+            System.out.printf("quicksort() when low is less than high then partition and recurse quicksort around partition%n");
 
             int partitionIndex = partition(low, high);
 
@@ -65,6 +65,11 @@ public class Quicksort {
 
             System.out.printf("quicksort() continue sorting after partition%n");
             quicksort(partitionIndex + 1, high);
+
+        } else {
+
+            System.out.printf("quicksort() when low is greater than or equal to high then found stop condition%n");
+            System.out.printf("quicksort() pop from recursion stack%n");
 
         }
 
