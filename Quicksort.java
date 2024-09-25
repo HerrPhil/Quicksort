@@ -52,15 +52,22 @@ public class Quicksort {
 
         System.out.printf("quicksort() on low %d and high %d%n", low, high);
 
-        int partitionIndex = partition(low, high);
+        if (low < high) {
 
-        System.out.printf("quicksort() partition index = %d%n", partitionIndex);
+            System.out.printf("when low is less than high then partition and recurse quicksort around partition%n");
 
-        System.out.printf("quicksort() continue sorting before partition%n");
-        quicksort(low, partitionIndex - 1);
+            int partitionIndex = partition(low, high);
 
-        System.out.printf("quicksort() continue sorting after partition%n");
-        quicksort(partitionIndex + 1, high);
+            System.out.printf("quicksort() partition index = %d%n", partitionIndex);
+
+            System.out.printf("quicksort() continue sorting before partition%n");
+            quicksort(low, partitionIndex - 1);
+
+            System.out.printf("quicksort() continue sorting after partition%n");
+            quicksort(partitionIndex + 1, high);
+
+        }
+
     }
 
     /**
